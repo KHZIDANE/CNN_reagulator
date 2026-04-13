@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="mimo_ur5e">
+
+  <!-- Include UR5e from the Universal Robots package -->
+  <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+
+  <!-- Declare arguments for UR -->
+  <xacro:arg name="ur_type" default="ur5e"/>
+  <!-- When running from Gazebo Ignition, absolute mesh paths are sometimes required -->
+  <xacro:arg name="force_abs_paths" default="true"/>
+
+  <link name="world" />
+
+  <!-- Base robot macro call -->
+  <xacro:ur_robot
+    name="ur5e"
+    tf_prefix=""
+    parent="world"
+    joint_limits_parameters_file="$(find ur_description)/config/ur5e/joint_limits.yaml"
+    kinematics_parameters_file="$(find ur_description)/config/ur5e/default_kinematics.yaml"
+    physical_parameters_file="$(find ur_description)/config/ur5e/physical_parameters.yaml"
+    visual_parameters_file="$(find ur_description)/config/ur5e/visual_parameters.yaml"
+    force_abs_paths="$(arg force_abs_paths)"
+    safety_limits="false"
+    safety_pos_margin="0.15"
+    safety_k_position="20">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+  </xacro:ur_robot>
+
+  <!-- Add Gazebo physics for joints with explicit damping -->
+  <gazebo reference="shoulder_pan_joint">
+    <implicitSpringDamper>true</implicitSpringDamper>
+    <kd>5.0</kd>
+    <kp>0.0</kp>
+  </gazebo>
+  <gazebo reference="shoulder_lift_joint">
+    <implicitSpringDamper>true</implicitSpringDamper>
+    <kd>5.0</kd>
+    <kp>0.0</kp>
+  </gazebo>
+  <gazebo reference="elbow_joint">
+    <implicitSpringDamper>true</implicitSpringDamper>
+    <kd>5.0</kd>
+    <kp>0.0</kp>
+  </gazebo>
+  <gazebo reference="wrist_1_joint">
+    <implicitSpringDamper>true</implicitSpringDamper>
+    <kd>5.0</kd>
+    <kp>0.0</kp>
+  </gazebo>
+  <gazebo reference="wrist_2_joint">
+    <implicitSpringDamper>true</implicitSpringDamper>
+    <kd>5.0</kd>
+    <kp>0.0</kp>
+  </gazebo>
+  <gazebo reference="wrist_3_joint">
+    <implicitSpringDamper>true</implicitSpringDamper>
+    <kd>5.0</kd>
+    <kp>0.0</kp>
+  </gazebo>
+
+  <!-- Add Gazebo ros2_control integration -->
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint name="shoulder_pan_joint">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="shoulder_lift_joint">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="elbow_joint">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="wrist_1_joint">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="wrist_2_joint">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="wrist_3_joint">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <!-- Gazebo plugin -->
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find mimo_process_gazebo)/config/controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+</robot>
