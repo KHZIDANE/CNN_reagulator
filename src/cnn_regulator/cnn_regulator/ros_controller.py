@@ -8,6 +8,7 @@ import collections
 import numpy as np
 import os
 from pathlib import Path
+from rclpy.qos import qos_profile_sensor_data
 
 class CNNControllerNode(Node):
     def __init__(self):
@@ -37,6 +38,12 @@ class CNNControllerNode(Node):
         # Current position (for error computation)
         self.current_q = np.zeros(6)
         self.current_dq = np.zeros(6)
+
+        # Optional normalization parameters loaded from checkpoint.
+        self.state_mean = None
+        self.state_scale = None
+        self.action_mean = None
+        self.action_scale = None
         
         # Instantiate Network Structure
         self.model = MIMO_CNN_Regulator(
@@ -51,7 +58,13 @@ class CNNControllerNode(Node):
         # Load pre-trained weights from the training phase
         if weights_file:
             try:
-                self.model.load_state_dict(torch.load(weights_file, weights_only=True))
+                checkpoint = torch.load(weights_file, map_location='cpu')
+                if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+                    self.model.load_state_dict(checkpoint['model_state_dict'])
+                    self._load_scalers_from_checkpoint(checkpoint)
+                else:
+                    # Backward compatibility with old state_dict-only weights files.
+                    self.model.load_state_dict(checkpoint)
                 self.get_logger().info(f'Loaded trained CNN weights from {weights_file}')
             except Exception as e:
                 self.get_logger().warn(f'Failed to load weights from {weights_file}: {e}. Running with random initialized weights.')
@@ -71,10 +84,16 @@ class CNNControllerNode(Node):
             self.state_callback,
             10
         )
+        self.target_subscription = self.create_subscription(
+            Float64MultiArray,
+            '/cnn_regulator/target_position',
+            self.target_callback,
+            10
+        )
         self.publisher = self.create_publisher(
             Float64MultiArray,
             '/effort_controllers/commands', # Topic to send effort commands to the robot
-            10
+            qos_profile_sensor_data
         )
         
         # Additional publishers for monitoring
@@ -85,7 +104,18 @@ class CNNControllerNode(Node):
         )
         
         self.get_logger().info(f'Target position set to: {self.target_q}')
+        self.get_logger().info('Listening for target updates on /cnn_regulator/target_position')
         self.get_logger().info('CNN Regulator Node has been started.')
+
+    def target_callback(self, msg):
+        if len(msg.data) != 6:
+            self.get_logger().warn(
+                f'Ignoring target update with {len(msg.data)} values; expected 6.'
+            )
+            return
+
+        self.target_q = np.array(msg.data, dtype=float)
+        self.get_logger().info(f'Updated target position: {np.round(self.target_q, 3)}')
 
     def state_callback(self, msg):
         # Extract joint positions and velocities from JointState message
@@ -108,13 +138,12 @@ class CNNControllerNode(Node):
         
         # Only compute the model when we have enough data (at least sequence_length)
         if len(self.state_history) == self.seq_len:
+            self.get_logger().info(f'[CONTROL] Buffer full ({len(self.state_history)}/{self.seq_len}): Publishing effort command')
             self.compute_and_publish_control()
+        elif len(self.state_history) % 5 == 0 or len(self.state_history) < 3:
+            self.get_logger().info(f'[STATE] Received state #{len(self.state_history)}/{self.seq_len}: q={np.round(q, 3)}')
 
     def compute_and_publish_control(self):
-        # Read target position dynamically (allows runtime updates via ros2 param set)
-        target_param = self.get_parameter('target_position').get_parameter_value().double_array_value
-        self.target_q = np.array(target_param) if target_param else self.target_q
-        
         # Format the sliding window data to fit the CNN Input (Batch, Channels/Sensors, SequenceLength)
         # Currently, data is shaped as (sequence_length, num_sensors) -> [[s1, s2], [s1, s2]]
         
@@ -126,12 +155,22 @@ class CNNControllerNode(Node):
         
         # Add the batch dimension -> (1, num_sensors, sequence_length)
         x = tensor_data.unsqueeze(0)
+
+        if self.state_mean is not None and self.state_scale is not None:
+            x_flat = x.reshape(1, -1).numpy()
+            x_flat = (x_flat - self.state_mean) / self.state_scale
+            x = torch.tensor(
+                x_flat.reshape(1, self.num_sensors, self.seq_len),
+                dtype=torch.float32,
+            )
         
         # Pass through our CNN Regulator
         with torch.no_grad():
             cnn_action = self.model(x)  # action tensor of shape (1, num_actuators)
             
         cnn_output = cnn_action.squeeze(0).numpy()
+        if self.action_mean is not None and self.action_scale is not None:
+            cnn_output = (cnn_output * self.action_scale) + self.action_mean
         
         # Compute position error and add error feedback
         error = self.target_q - self.current_q
@@ -151,7 +190,7 @@ class CNNControllerNode(Node):
         error_msg.data = error.tolist()
         self.error_publisher.publish(error_msg)
         
-        self.get_logger().debug(f'CNN: {cnn_output}, Error: {error}, Total: {final_action}')
+        self.get_logger().info(f'[PUBLISH] CNN out: {np.round(cnn_output, 2)}, Error: {np.round(error, 3)}, Final: {np.round(final_action, 2)}')
 
     def _find_weights_file(self):
         """Find the weights file in common locations"""
@@ -170,6 +209,28 @@ class CNNControllerNode(Node):
                 return str(path)
         
         return None
+
+    def _load_scalers_from_checkpoint(self, checkpoint):
+        required_keys = [
+            'state_scaler_mean',
+            'state_scaler_scale',
+            'action_scaler_mean',
+            'action_scaler_scale',
+        ]
+        if not all(key in checkpoint for key in required_keys):
+            self.get_logger().warn('Checkpoint does not contain scaler metadata; using raw I/O.')
+            return
+
+        self.state_mean = np.asarray(checkpoint['state_scaler_mean'], dtype=np.float32)
+        self.state_scale = np.asarray(checkpoint['state_scaler_scale'], dtype=np.float32)
+        self.action_mean = np.asarray(checkpoint['action_scaler_mean'], dtype=np.float32)
+        self.action_scale = np.asarray(checkpoint['action_scaler_scale'], dtype=np.float32)
+
+        # Avoid division by zero for constant channels.
+        self.state_scale = np.where(self.state_scale == 0.0, 1.0, self.state_scale)
+        self.action_scale = np.where(self.action_scale == 0.0, 1.0, self.action_scale)
+
+        self.get_logger().info('Loaded normalization metadata from checkpoint.')
 
 def main(args=None):
     rclpy.init(args=args)

@@ -8,7 +8,10 @@ import torch
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from cnn_model import MIMO_CNN_Regulator
+try:
+    from .cnn_model import MIMO_CNN_Regulator
+except ImportError:
+    from cnn_model import MIMO_CNN_Regulator
 import sys
 
 def load_training_data(csv_file='training_data.csv'):
@@ -24,13 +27,38 @@ def load_model(weights_file='cnn_regulator_weights.pth'):
     """Load trained CNN model."""
     try:
         model = MIMO_CNN_Regulator()
-        model.load_state_dict(torch.load(weights_file))
+        checkpoint = torch.load(weights_file, map_location='cpu')
+        state_scaler = None
+        action_scaler = None
+
+        if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+            model.load_state_dict(checkpoint['model_state_dict'])
+            if all(
+                k in checkpoint
+                for k in [
+                    'state_scaler_mean',
+                    'state_scaler_scale',
+                    'action_scaler_mean',
+                    'action_scaler_scale',
+                ]
+            ):
+                state_scaler = {
+                    'mean': np.asarray(checkpoint['state_scaler_mean'], dtype=np.float32),
+                    'scale': np.asarray(checkpoint['state_scaler_scale'], dtype=np.float32),
+                }
+                action_scaler = {
+                    'mean': np.asarray(checkpoint['action_scaler_mean'], dtype=np.float32),
+                    'scale': np.asarray(checkpoint['action_scaler_scale'], dtype=np.float32),
+                }
+        else:
+            model.load_state_dict(checkpoint)
+
         model.eval()
         print(f"✓ Loaded model weights from {weights_file}")
-        return model
+        return model, state_scaler, action_scaler
     except FileNotFoundError:
         print(f"Error: {weights_file} not found. Run train.py first.")
-        return None
+        return None, None, None
 
 def analyze_training_data(data):
     """Analyze the collected training data statistics."""
@@ -59,7 +87,15 @@ def analyze_training_data(data):
     
     return states_data, actions_data
 
-def compute_model_statistics(model, data, seq_len=10, num_sensors=12, num_actuators=6):
+def compute_model_statistics(
+    model,
+    data,
+    state_scaler=None,
+    action_scaler=None,
+    seq_len=10,
+    num_sensors=12,
+    num_actuators=6,
+):
     """Compute model predictions and error statistics."""
     print("\n" + "="*60)
     print("CNN MODEL EVALUATION")
@@ -74,12 +110,22 @@ def compute_model_statistics(model, data, seq_len=10, num_sensors=12, num_actuat
     with torch.no_grad():
         for i in range(len(data)):
             state = states_data[i]
+
+            if state_scaler is not None:
+                safe_scale = np.where(state_scaler['scale'] == 0.0, 1.0, state_scaler['scale'])
+                state = (state - state_scaler['mean']) / safe_scale
+
             state_tensor = torch.tensor(
                 np.reshape(state, (seq_len, num_sensors)).T,
                 dtype=torch.float32
             ).unsqueeze(0)  # Add batch dimension
             
             pred = model(state_tensor).squeeze(0).numpy()
+
+            if action_scaler is not None:
+                safe_scale = np.where(action_scaler['scale'] == 0.0, 1.0, action_scaler['scale'])
+                pred = (pred * safe_scale) + action_scaler['mean']
+
             predictions.append(pred)
             ground_truth.append(actions_data[i])
     
@@ -161,7 +207,7 @@ def generate_report():
         return False
     
     # Load model
-    model = load_model()
+    model, state_scaler, action_scaler = load_model()
     if model is None:
         return False
     
@@ -169,7 +215,12 @@ def generate_report():
     states_data, actions_data = analyze_training_data(data)
     
     # Compute model statistics
-    predictions, ground_truth = compute_model_statistics(model, data)
+    predictions, ground_truth = compute_model_statistics(
+        model,
+        data,
+        state_scaler=state_scaler,
+        action_scaler=action_scaler,
+    )
     
     # Generate plots
     plot_training_loss()

@@ -1,0 +1,23 @@
+[0.383s] Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo -- -j16 -l16
+[0.452s] Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo -- -j16 -l16
+[0.471s] Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo
+[0.489s] -- Install configuration: ""
+[0.490s] -- Execute custom install script
+[0.490s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo//launch/sim.launch.py
+[0.491s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo//config/controllers.yaml
+[0.491s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/ament_index/resource_index/package_run_dependencies/mimo_process_gazebo
+[0.492s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/ament_index/resource_index/parent_prefix_path/mimo_process_gazebo
+[0.493s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/environment/ament_prefix_path.sh
+[0.493s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/environment/ament_prefix_path.dsv
+[0.493s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/environment/path.sh
+[0.493s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/environment/path.dsv
+[0.494s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/local_setup.bash
+[0.494s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/local_setup.sh
+[0.494s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/local_setup.zsh
+[0.494s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/local_setup.dsv
+[0.495s] -- Symlinking: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.dsv
+[0.513s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/ament_index/resource_index/packages/mimo_process_gazebo
+[0.514s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/cmake/mimo_process_gazeboConfig.cmake
+[0.515s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/cmake/mimo_process_gazeboConfig-version.cmake
+[0.515s] -- Up-to-date symlink: /home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.xml
+[0.531s] Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo

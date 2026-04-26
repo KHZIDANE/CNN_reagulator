@@ -5,7 +5,7 @@ if 'GTK_PATH' in os.environ:
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, ExecuteProcess
+from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 import xacro
@@ -19,12 +19,22 @@ def generate_launch_description():
     robot_description_config = xacro.process_file(xacro_file)
     robot_description = {'robot_description': robot_description_config.toxml()}
     
+    world_file = os.path.join(pkg_mimo_gazebo, 'worlds', 'zero_gravity.sdf')
+
     # Start Gazebo Server and Client
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')
         ),
-        launch_arguments={'gz_args': '-r empty.sdf'}.items(),
+        launch_arguments={'gz_args': f'-r {world_file}'}.items(),
+    )
+
+    # Bridge Gazebo clock into ROS 2 so controller timing advances correctly.
+    clock_bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
+        output='screen',
     )
     
     # Spawn Robot
@@ -40,16 +50,9 @@ def generate_launch_description():
         package='robot_state_publisher',
         executable='robot_state_publisher',
         output='screen',
-        parameters=[robot_description]
+        parameters=[robot_description, {'use_sim_time': True}]
     )
 
-    # Load Joint State Broadcaster
-    joint_state_broadcaster_spawner = Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=['joint_state_broadcaster'],
-    )
-    
     # Load Effort Controller
     effort_controller_spawner = Node(
         package='controller_manager',
@@ -57,10 +60,17 @@ def generate_launch_description():
         arguments=['effort_controllers'],
     )
 
+    # Load Joint State Broadcaster (publishes /joint_states)
+    joint_state_broadcaster_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster'],
+    )
+
     return LaunchDescription([
         gazebo,
+        clock_bridge,
         robot_state_publisher,
         spawn_entity,
-        joint_state_broadcaster_spawner,
-        effort_controller_spawner
+        TimerAction(period=5.0, actions=[effort_controller_spawner, joint_state_broadcaster_spawner]),
     ])

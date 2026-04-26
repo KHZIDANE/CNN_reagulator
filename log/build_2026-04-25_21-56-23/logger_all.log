@@ -1,0 +1,317 @@
+[0.405s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.406s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7db5ea860380>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7db5ea8600b0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7db5ea8600b0>>)
+[0.559s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.560s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.560s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.560s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.560s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.561s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.561s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/zidane/Desktop/project_cnn_regulation'
+[0.561s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.659s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.659s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.661s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.661s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.661s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/Universal_Robots_ROS2_Description) by extensions ['ignore', 'ignore_ament_install']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/Universal_Robots_ROS2_Description) by extension 'ignore'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/Universal_Robots_ROS2_Description) by extension 'ignore_ament_install'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/Universal_Robots_ROS2_Description) by extensions ['colcon_pkg']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/Universal_Robots_ROS2_Description) by extension 'colcon_pkg'
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/Universal_Robots_ROS2_Description) by extensions ['colcon_meta']
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/Universal_Robots_ROS2_Description) by extension 'colcon_meta'
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/Universal_Robots_ROS2_Description) by extensions ['ros']
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/Universal_Robots_ROS2_Description) by extension 'ros'
+[0.686s] DEBUG:colcon.colcon_core.package_identification:Package 'src/Universal_Robots_ROS2_Description' with type 'ros.ament_cmake' and name 'ur_description'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src/cnn_regulator) by extensions ['ignore', 'ignore_ament_install']
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/cnn_regulator) by extension 'ignore'
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/cnn_regulator) by extension 'ignore_ament_install'
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/cnn_regulator) by extensions ['colcon_pkg']
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/cnn_regulator) by extension 'colcon_pkg'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/cnn_regulator) by extensions ['colcon_meta']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/cnn_regulator) by extension 'colcon_meta'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/cnn_regulator) by extensions ['ros']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/cnn_regulator) by extension 'ros'
+[0.691s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cnn_regulator' with type 'ros.ament_python' and name 'cnn_regulator'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_description) by extensions ['ignore', 'ignore_ament_install']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_description) by extension 'ignore'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_description) by extension 'ignore_ament_install'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_description) by extensions ['colcon_pkg']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_description) by extension 'colcon_pkg'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_description) by extensions ['colcon_meta']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_description) by extension 'colcon_meta'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_description) by extensions ['ros']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_description) by extension 'ros'
+[0.695s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mimo_process_description' with type 'ros.ament_cmake' and name 'mimo_process_description'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_gazebo) by extension 'ignore'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_gazebo) by extension 'ignore_ament_install'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_gazebo) by extensions ['colcon_pkg']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_gazebo) by extension 'colcon_pkg'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_gazebo) by extensions ['colcon_meta']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_gazebo) by extension 'colcon_meta'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_gazebo) by extensions ['ros']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(src/mimo_process_gazebo) by extension 'ros'
+[0.698s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mimo_process_gazebo' with type 'ros.ament_cmake' and name 'mimo_process_gazebo'
+[0.698s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.699s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.699s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.699s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.699s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.775s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.775s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.784s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/zidane/Desktop/project_cnn_regulation/install
+[0.789s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 416 installed packages in /opt/ros/jazzy
+[0.791s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.930s] Level 5:colcon.colcon_core.verb:set package 'cnn_regulator' build argument 'cmake_args' from command line to 'None'
+[0.930s] Level 5:colcon.colcon_core.verb:set package 'cnn_regulator' build argument 'cmake_target' from command line to 'None'
+[0.930s] Level 5:colcon.colcon_core.verb:set package 'cnn_regulator' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.930s] Level 5:colcon.colcon_core.verb:set package 'cnn_regulator' build argument 'cmake_clean_cache' from command line to 'False'
+[0.930s] Level 5:colcon.colcon_core.verb:set package 'cnn_regulator' build argument 'cmake_clean_first' from command line to 'False'
+[0.930s] Level 5:colcon.colcon_core.verb:set package 'cnn_regulator' build argument 'cmake_force_configure' from command line to 'False'
+[0.930s] Level 5:colcon.colcon_core.verb:set package 'cnn_regulator' build argument 'ament_cmake_args' from command line to 'None'
+[0.930s] Level 5:colcon.colcon_core.verb:set package 'cnn_regulator' build argument 'catkin_cmake_args' from command line to 'None'
+[0.930s] Level 5:colcon.colcon_core.verb:set package 'cnn_regulator' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.931s] DEBUG:colcon.colcon_core.verb:Building package 'cnn_regulator' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator', 'merge_install': False, 'path': '/home/zidane/Desktop/project_cnn_regulation/src/cnn_regulator', 'symlink_install': True, 'test_result_base': None}
+[0.932s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_description' build argument 'cmake_args' from command line to 'None'
+[0.932s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_description' build argument 'cmake_target' from command line to 'None'
+[0.932s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.932s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.932s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.932s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.932s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.932s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.932s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.932s] DEBUG:colcon.colcon_core.verb:Building package 'mimo_process_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description', 'merge_install': False, 'path': '/home/zidane/Desktop/project_cnn_regulation/src/mimo_process_description', 'symlink_install': True, 'test_result_base': None}
+[0.933s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.933s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.933s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.933s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.933s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.933s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.933s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.933s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.933s] Level 5:colcon.colcon_core.verb:set package 'mimo_process_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.933s] DEBUG:colcon.colcon_core.verb:Building package 'mimo_process_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo', 'merge_install': False, 'path': '/home/zidane/Desktop/project_cnn_regulation/src/mimo_process_gazebo', 'symlink_install': True, 'test_result_base': None}
+[0.934s] Level 5:colcon.colcon_core.verb:set package 'ur_description' build argument 'cmake_args' from command line to 'None'
+[0.934s] Level 5:colcon.colcon_core.verb:set package 'ur_description' build argument 'cmake_target' from command line to 'None'
+[0.934s] Level 5:colcon.colcon_core.verb:set package 'ur_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.934s] Level 5:colcon.colcon_core.verb:set package 'ur_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.934s] Level 5:colcon.colcon_core.verb:set package 'ur_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.934s] Level 5:colcon.colcon_core.verb:set package 'ur_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.934s] Level 5:colcon.colcon_core.verb:set package 'ur_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.934s] Level 5:colcon.colcon_core.verb:set package 'ur_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.934s] Level 5:colcon.colcon_core.verb:set package 'ur_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.934s] DEBUG:colcon.colcon_core.verb:Building package 'ur_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zidane/Desktop/project_cnn_regulation/build/ur_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zidane/Desktop/project_cnn_regulation/install/ur_description', 'merge_install': False, 'path': '/home/zidane/Desktop/project_cnn_regulation/src/Universal_Robots_ROS2_Description', 'symlink_install': True, 'test_result_base': None}
+[0.934s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.937s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.938s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/zidane/Desktop/project_cnn_regulation/src/cnn_regulator' with build type 'ament_python'
+[0.938s] Level 1:colcon.colcon_core.shell:create_environment_hook('cnn_regulator', 'ament_prefix_path')
+[0.948s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.949s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/hook/ament_prefix_path.ps1'
+[0.952s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/hook/ament_prefix_path.dsv'
+[0.954s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/hook/ament_prefix_path.sh'
+[0.956s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.956s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.969s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/zidane/Desktop/project_cnn_regulation/src/mimo_process_description' with build type 'ament_cmake'
+[0.970s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/zidane/Desktop/project_cnn_regulation/src/mimo_process_description'
+[0.970s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.971s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.984s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/zidane/Desktop/project_cnn_regulation/src/mimo_process_gazebo' with build type 'ament_cmake'
+[0.985s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/zidane/Desktop/project_cnn_regulation/src/mimo_process_gazebo'
+[0.986s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.987s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.001s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/zidane/Desktop/project_cnn_regulation/src/Universal_Robots_ROS2_Description' with build type 'ament_cmake'
+[1.002s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/zidane/Desktop/project_cnn_regulation/src/Universal_Robots_ROS2_Description'
+[1.003s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.004s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.953s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/zidane/Desktop/project_cnn_regulation/src/cnn_regulator'
+[1.954s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.954s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.982s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_description -- -j16 -l16
+[2.001s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo -- -j16 -l16
+[2.037s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/ur_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/zidane/Desktop/project_cnn_regulation/build/ur_description -- -j16 -l16
+[2.155s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_description -- -j16 -l16
+[2.208s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_description
+[2.213s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/ur_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/zidane/Desktop/project_cnn_regulation/build/ur_description -- -j16 -l16
+[2.221s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/ur_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/zidane/Desktop/project_cnn_regulation/build/ur_description
+[2.294s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mimo_process_description)
+[2.315s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description' for CMake module files
+[2.339s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description' for CMake config files
+[2.342s] Level 1:colcon.colcon_core.shell:create_environment_hook('mimo_process_description', 'cmake_prefix_path')
+[2.343s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/hook/cmake_prefix_path.ps1'
+[2.351s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/hook/cmake_prefix_path.dsv'
+[2.356s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_description
+[2.358s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/hook/cmake_prefix_path.sh'
+[2.366s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/bin'
+[2.367s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/lib/pkgconfig/mimo_process_description.pc'
+[2.368s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/lib/python3.12/site-packages'
+[2.370s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/bin'
+[2.373s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.ps1'
+[2.380s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.dsv'
+[2.382s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.sh'
+[2.396s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.bash'
+[2.403s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.zsh'
+[2.406s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/colcon-core/packages/mimo_process_description)
+[2.413s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mimo_process_description)
+[2.413s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description' for CMake module files
+[2.415s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description' for CMake config files
+[2.426s] Level 1:colcon.colcon_core.shell:create_environment_hook('mimo_process_description', 'cmake_prefix_path')
+[2.427s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/hook/cmake_prefix_path.ps1'
+[2.431s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/hook/cmake_prefix_path.dsv'
+[2.433s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/hook/cmake_prefix_path.sh'
+[2.437s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/bin'
+[2.437s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/lib/pkgconfig/mimo_process_description.pc'
+[2.438s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/lib/python3.12/site-packages'
+[2.440s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/bin'
+[2.442s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.ps1'
+[2.446s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.dsv'
+[2.453s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.sh'
+[2.458s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.bash'
+[2.464s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/mimo_process_description/package.zsh'
+[2.472s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_description/share/colcon-core/packages/mimo_process_description)
+[2.479s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_description)
+[2.480s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description' for CMake module files
+[2.484s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description' for CMake config files
+[2.494s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/ur_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/zidane/Desktop/project_cnn_regulation/build/ur_description
+[2.500s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_description', 'cmake_prefix_path')
+[2.502s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/hook/cmake_prefix_path.ps1'
+[2.504s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/hook/cmake_prefix_path.dsv'
+[2.505s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/hook/cmake_prefix_path.sh'
+[2.507s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/bin'
+[2.507s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/lib/pkgconfig/ur_description.pc'
+[2.508s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/lib/python3.12/site-packages'
+[2.509s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/bin'
+[2.511s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.ps1'
+[2.513s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.dsv'
+[2.515s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.sh'
+[2.517s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.bash'
+[2.518s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.zsh'
+[2.519s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/colcon-core/packages/ur_description)
+[2.521s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_description)
+[2.522s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description' for CMake module files
+[2.524s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description' for CMake config files
+[2.532s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_description', 'cmake_prefix_path')
+[2.533s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/hook/cmake_prefix_path.ps1'
+[2.535s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/hook/cmake_prefix_path.dsv'
+[2.536s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/hook/cmake_prefix_path.sh'
+[2.539s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/bin'
+[2.539s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/lib/pkgconfig/ur_description.pc'
+[2.539s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/lib/python3.12/site-packages'
+[2.540s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/bin'
+[2.541s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.ps1'
+[2.544s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.dsv'
+[2.545s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.sh'
+[2.547s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.bash'
+[2.548s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/ur_description/package.zsh'
+[2.550s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zidane/Desktop/project_cnn_regulation/install/ur_description/share/colcon-core/packages/ur_description)
+[3.782s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo -- -j16 -l16
+[3.789s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo
+[3.910s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mimo_process_gazebo)
+[3.912s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo' for CMake module files
+[3.915s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo
+[3.917s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo' for CMake config files
+[3.918s] Level 1:colcon.colcon_core.shell:create_environment_hook('mimo_process_gazebo', 'cmake_prefix_path')
+[3.919s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/hook/cmake_prefix_path.ps1'
+[3.921s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/hook/cmake_prefix_path.dsv'
+[3.923s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/hook/cmake_prefix_path.sh'
+[3.925s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/bin'
+[3.926s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/lib/pkgconfig/mimo_process_gazebo.pc'
+[3.927s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/lib/python3.12/site-packages'
+[3.928s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/bin'
+[3.930s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.ps1'
+[3.932s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.dsv'
+[3.935s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.sh'
+[3.937s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.bash'
+[3.938s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.zsh'
+[3.939s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/colcon-core/packages/mimo_process_gazebo)
+[3.942s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mimo_process_gazebo)
+[3.943s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo' for CMake module files
+[3.945s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo' for CMake config files
+[3.947s] Level 1:colcon.colcon_core.shell:create_environment_hook('mimo_process_gazebo', 'cmake_prefix_path')
+[3.948s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/hook/cmake_prefix_path.ps1'
+[3.950s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/hook/cmake_prefix_path.dsv'
+[3.952s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/hook/cmake_prefix_path.sh'
+[3.956s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/bin'
+[3.956s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/lib/pkgconfig/mimo_process_gazebo.pc'
+[3.958s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/lib/python3.12/site-packages'
+[3.959s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/bin'
+[3.960s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.ps1'
+[3.963s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.dsv'
+[3.966s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.sh'
+[3.968s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.bash'
+[3.971s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/mimo_process_gazebo/package.zsh'
+[3.974s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zidane/Desktop/project_cnn_regulation/install/mimo_process_gazebo/share/colcon-core/packages/mimo_process_gazebo)
+[4.401s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/build --no-deps symlink_data
+[6.436s] Level 1:colcon.colcon_core.shell:create_environment_hook('cnn_regulator', 'pythonpath_develop')
+[6.437s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/share/cnn_regulator/hook/pythonpath_develop.ps1'
+[6.438s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/build --no-deps symlink_data
+[6.440s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/share/cnn_regulator/hook/pythonpath_develop.dsv'
+[6.441s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/share/cnn_regulator/hook/pythonpath_develop.sh'
+[6.443s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator' for CMake module files
+[6.444s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator' for CMake config files
+[6.446s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib'
+[6.446s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/bin'
+[6.446s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/pkgconfig/cnn_regulator.pc'
+[6.447s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/python3.12/site-packages'
+[6.447s] Level 1:colcon.colcon_core.shell:create_environment_hook('cnn_regulator', 'pythonpath')
+[6.447s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/hook/pythonpath.ps1'
+[6.448s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/hook/pythonpath.dsv'
+[6.449s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/hook/pythonpath.sh'
+[6.451s] Level 1:colcon.colcon_core.environment:checking '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/bin'
+[6.451s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cnn_regulator)
+[6.452s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/package.ps1'
+[6.455s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/package.dsv'
+[6.457s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/package.sh'
+[6.459s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/package.bash'
+[6.461s] INFO:colcon.colcon_core.shell:Creating package script '/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/cnn_regulator/package.zsh'
+[6.462s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/share/colcon-core/packages/cnn_regulator)
+[6.463s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[6.464s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[6.465s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[6.465s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[6.485s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[6.485s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[6.485s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[6.532s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[6.533s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zidane/Desktop/project_cnn_regulation/install/local_setup.ps1'
+[6.536s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/zidane/Desktop/project_cnn_regulation/install/_local_setup_util_ps1.py'
+[6.540s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zidane/Desktop/project_cnn_regulation/install/setup.ps1'
+[6.545s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zidane/Desktop/project_cnn_regulation/install/local_setup.sh'
+[6.547s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/zidane/Desktop/project_cnn_regulation/install/_local_setup_util_sh.py'
+[6.549s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zidane/Desktop/project_cnn_regulation/install/setup.sh'
+[6.553s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zidane/Desktop/project_cnn_regulation/install/local_setup.bash'
+[6.556s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zidane/Desktop/project_cnn_regulation/install/setup.bash'
+[6.559s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zidane/Desktop/project_cnn_regulation/install/local_setup.zsh'
+[6.560s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zidane/Desktop/project_cnn_regulation/install/setup.zsh'

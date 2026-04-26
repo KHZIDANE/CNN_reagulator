@@ -26,7 +26,9 @@ setup(
         'console_scripts': [
             'ros_controller = cnn_regulator.ros_controller:main',
             'data_collector = cnn_regulator.data_collector:main',
-            'target_ui = cnn_regulator.target_ui:main'
+            'target_ui = cnn_regulator.target_ui:main',
+            'target_gui = cnn_regulator.gui_target_ui:main',
+            'classic_controller = cnn_regulator.classic_controller:main'
         ],
     },
 )

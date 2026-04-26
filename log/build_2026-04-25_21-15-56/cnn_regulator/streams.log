@@ -1,0 +1,20 @@
+[0.589s] Invoking command in '/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/build --no-deps symlink_data
+[0.791s] running develop
+[0.907s] running egg_info
+[0.919s] writing cnn_regulator.egg-info/PKG-INFO
+[0.919s] writing dependency_links to cnn_regulator.egg-info/dependency_links.txt
+[0.919s] writing entry points to cnn_regulator.egg-info/entry_points.txt
+[0.919s] writing requirements to cnn_regulator.egg-info/requires.txt
+[0.919s] writing top-level names to cnn_regulator.egg-info/top_level.txt
+[0.945s] reading manifest file 'cnn_regulator.egg-info/SOURCES.txt'
+[0.945s] writing manifest file 'cnn_regulator.egg-info/SOURCES.txt'
+[0.958s] running build_ext
+[0.958s] Creating /home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/python3.12/site-packages/cnn-regulator.egg-link (link to .)
+[0.958s] Installing data_collector script to /home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/cnn_regulator
+[0.958s] Installing ros_controller script to /home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/cnn_regulator
+[0.958s] Installing target_gui script to /home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/cnn_regulator
+[0.959s] Installing target_ui script to /home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/cnn_regulator
+[0.959s] 
+[0.959s] Installed /home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator
+[0.959s] running symlink_data
+[0.979s] Invoked command in '/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zidane/Desktop/project_cnn_regulation/install/cnn_regulator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zidane/Desktop/project_cnn_regulation/build/cnn_regulator/build --no-deps symlink_data
