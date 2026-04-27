@@ -1,1 +1,0 @@
-/home/zidane/Desktop/project_cnn_regulation/src/mimo_process_gazebo/launch/sim.launch.py

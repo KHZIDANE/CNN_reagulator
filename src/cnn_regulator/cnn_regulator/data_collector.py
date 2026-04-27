@@ -13,6 +13,9 @@ class DataCollectorNode(Node):
         # Target positions for the 6 joints
         self.target_q = np.array([1.0, -1.0, 1.0, -1.0, 1.0, 0.5])
         
+        # Timer to randomize targets every 8 seconds to build a diverse dataset
+        self.target_timer = self.create_timer(8.0, self.randomize_target)
+        
         # PD gains for each joint
         self.Kp = np.array([50.0, 100.0, 50.0, 20.0, 10.0, 10.0])
         self.Kd = np.array([5.0, 10.0, 5.0, 2.0, 1.0, 1.0])
@@ -48,7 +51,12 @@ class DataCollectorNode(Node):
             10
         )
         
-        self.get_logger().info('Data Collector (PD Controller) started.')
+        self.get_logger().info('Data Collector (PD Controller) started. Generating random targets...')
+
+    def randomize_target(self):
+        # Generate random joint angles between -2.0 and 2.0 radians
+        self.target_q = np.random.uniform(-2.0, 2.0, 6)
+        self.get_logger().info(f'New random target: {np.round(self.target_q, 3)}')
 
     def state_callback(self, msg):
         try:

@@ -1,9 +1,0 @@
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/CMakeFiles/uninstall.dir
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/CMakeFiles/mimo_process_gazebo_uninstall.dir
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/CMakeFiles/test.dir
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/CMakeFiles/edit_cache.dir
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/CMakeFiles/rebuild_cache.dir
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/CMakeFiles/list_install_components.dir
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/CMakeFiles/install.dir
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/CMakeFiles/install/local.dir
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/CMakeFiles/install/strip.dir

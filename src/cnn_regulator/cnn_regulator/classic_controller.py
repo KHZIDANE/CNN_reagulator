@@ -10,8 +10,8 @@ class ClassicControllerNode(Node):
         super().__init__('classic_controller_node')
         
         # PID control gains
-        self.declare_parameter('kp', [50.0, 50.0, 50.0, 20.0, 20.0, 20.0])
-        self.declare_parameter('kd', [10.0, 10.0, 10.0, 5.0, 5.0, 5.0])
+        self.declare_parameter('kp', [50.0, 50.0, 50.0, 20.0, 10.0, 2.0])
+        self.declare_parameter('kd', [10.0, 10.0, 10.0, 5.0, 1.0, 1.0])
         
         self.kp = np.array(self.get_parameter('kp').get_parameter_value().double_array_value)
         self.kd = np.array(self.get_parameter('kd').get_parameter_value().double_array_value)

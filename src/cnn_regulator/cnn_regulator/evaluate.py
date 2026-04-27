@@ -27,7 +27,7 @@ def load_model(weights_file='cnn_regulator_weights.pth'):
     """Load trained CNN model."""
     try:
         model = MIMO_CNN_Regulator()
-        checkpoint = torch.load(weights_file, map_location='cpu')
+        checkpoint = torch.load(weights_file, map_location='cpu', weights_only=False)
         state_scaler = None
         action_scaler = None
 

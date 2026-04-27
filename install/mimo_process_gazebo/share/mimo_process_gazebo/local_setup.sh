@@ -1,1 +1,0 @@
-/home/zidane/Desktop/project_cnn_regulation/build/mimo_process_gazebo/ament_cmake_environment_hooks/local_setup.sh

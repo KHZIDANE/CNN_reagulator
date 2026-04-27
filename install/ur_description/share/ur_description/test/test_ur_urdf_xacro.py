@@ -1,1 +1,0 @@
-/home/zidane/Desktop/project_cnn_regulation/src/Universal_Robots_ROS2_Description/test/test_ur_urdf_xacro.py
